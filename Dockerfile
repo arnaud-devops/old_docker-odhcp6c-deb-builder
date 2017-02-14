@@ -7,4 +7,7 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get install -y --no-install
     && sed -i 's/;RPM;STGZ//' CMakeLists.txt \
     && cmake -DLIBUBOX=0 . \
     && make package \
-    && mv odhcp6c_1.deb /root/odhcp6c.deb
+    && mv odhcp6c_1.deb /root/odhcp6c.deb \
+    && apt-get purge -y build-essential git ca-certificates cmake \
+    && apt-get autoremove --purge -y && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/*
