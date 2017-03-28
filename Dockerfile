@@ -1,7 +1,7 @@
 FROM debian:sid
 
 # https://git.lede-project.org/?p=project/odhcp6c.git
-# last change	Tue, 21 Feb 2017 22:07:24 +0000
+# last change	Wed, 22 Mar 2017 15:19:52 +0000
 
 RUN apt-get update && apt-get -y dist-upgrade && apt-get install -y --no-install-recommends --no-install-suggests build-essential git ca-certificates cmake \
     && cd /tmp \
